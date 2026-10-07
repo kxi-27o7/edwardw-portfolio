@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Collabra",
+    "category": "Backend & Full Stack",
+    "tech": ["FastAPI", "SQLModel", "PostgreSQL", "JavaScript", "Docker", "Render"],
+    "theme": {
+      "primary": "#6366F1",
+      "accent": "#818CF8",
+      "glow": "rgba(99, 102, 241, 0.15)"
+    },
+    "summary": "Full-stack project collaboration app with role-based authorization, real-time status tracking, and containerized API deployment.",
+    "purpose": {
+      "problem": "Software teams need real-time task tracking without complex setup or loose permission management across project members.",
+      "solution": "Built a modular REST API using FastAPI and SQLModel with custom middleware for role-based authorization (owner/member levels) and Dockerized deployment.",
+      "impact": "Delivered a robust backend API with relational PostgreSQL schemas, achieving low-latency query execution and containerized delivery on Render."
+    },
+    "links": {
+      "github": "https://github.com/kxi-27o7",
+      "demo": "https://github.com/kxi-27o7"
+    }
+  },
+  {
+    "title": "BankGuard",
+    "category": "Machine Learning & Security",
+    "tech": ["Python", "Flask", "Scikit-Learn", "Pandas", "MongoDB", "Vercel"],
+    "theme": {
+      "primary": "#10B981",
+      "accent": "#34D399",
+      "glow": "rgba(16, 185, 129, 0.15)"
+    },
+    "summary": "Flask-based mobile banking prototype that evaluates real-time transaction features against a trained Random Forest model to flag potential fraud and persist prediction data.",
+    "purpose": {
+      "problem": "Mobile transaction fraud requires real-time detection on heavily imbalanced datasets, where standard accuracy metrics fail to capture high-risk fraudulent behavior.",
+      "solution": "Engineered an end-to-end inference pipeline featuring dynamic transaction feature generation (rolling stats & balance shifts), threshold-tuned Random Forest evaluation, and Flask REST API integration with MongoDB persistence.",
+      "impact": "Processed and prepared over 1.67M dataset rows, achieving ~97.3% fraud recall on test set evaluations while establishing a sub-second model deployment workflow on Vercel."
+    },
+    "links": {
+      "github": "https://github.com/kxi-27o7",
+      "demo": "https://github.com/kxi-27o7"
+    }
+  },
+  {
+    "title": "SeeFlood",
+    "category": "Computer Vision & Deep Learning",
+    "tech": ["Python", "PyTorch", "Torchvision", "EfficientNet-B0", "Scikit-Learn", "NumPy"],
+    "theme": {
+      "primary": "#0EA5E9",
+      "accent": "#38BDF8",
+      "glow": "rgba(14, 165, 233, 0.15)"
+    },
+    "summary": "Deep learning computer vision pipeline engineered to classify flood image severity into four ordered levels—no flood, light, moderate, and severe—using fine-tuned convolutional architectures.",
+    "purpose": {
+      "problem": "Disaster assessment requires rapid, accurate flood severity categorization from visual data, where standard classification ignores the continuous, ordered nature of flood progression.",
+      "solution": "Built an end-to-end computer vision workflow in PyTorch, fine-tuning an ImageNet-pretrained EfficientNet-B0 with image augmentation, ordinal regression loss formulation, and structured train/val/test evaluation.",
+      "impact": "Successfully engineered dataset preprocessing and multi-class evaluation routines, validating model performance using Mean Absolute Error (MAE), confusion matrices, and detailed error distribution reviews."
+    },
+    "links": {
+      "github": "https://github.com/kxi-27o7",
+      "demo": "https://github.com/kxi-27o7"
+    }
+  }
+]
