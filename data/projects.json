@@ -1,6 +1,8 @@
 [
   {
     "title": "Collabra",
+    "role": "Backend Developer",
+    "period": "2026",
     "category": "Backend & Full Stack",
     "tech": ["FastAPI", "SQLModel", "PostgreSQL", "JavaScript", "Docker", "Render"],
     "theme": {
@@ -21,6 +23,8 @@
   },
   {
     "title": "BankGuard",
+    "role": "Machine Learning Engineer",
+    "period": "2026",
     "category": "Machine Learning & Security",
     "tech": ["Python", "Flask", "Scikit-Learn", "Pandas", "MongoDB", "Vercel"],
     "theme": {
@@ -41,6 +45,8 @@
   },
   {
     "title": "SeeFlood",
+    "role": "Computer Vision Engineer",
+    "period": "2025",
     "category": "Computer Vision & Deep Learning",
     "tech": ["Python", "PyTorch", "Torchvision", "EfficientNet-B0", "Scikit-Learn", "NumPy"],
     "theme": {

@@ -44,7 +44,7 @@ export default function ProjectCard({ project }) {
         <div>
           <h3 className="text-2xl font-bold tracking-[-0.04em] text-white">{project.title}</h3>
           <p className="mt-2 text-xs uppercase tracking-[0.26em] text-slate-400">
-            {project.role || 'Full-Stack Engineer'} • {project.timeline || '2024-2025'}
+            {project.role} • {project.period || '2024-2025'}
           </p>
         </div>
 
