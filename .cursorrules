@@ -1,0 +1,33 @@
+# Cursor Rules — Edward Wibowo Portfolio (Next.js 14+ / Tailwind CSS)
+
+## Core Stack & Context Guidelines
+- Tech Stack: Next.js 14+ (App Router), JavaScript/React, Tailwind CSS, Lucide React (icons).
+- Animation Library: Use **[tsparticles-slim]** for background effects (performance optimized).
+- Strict Rule: Always consult `PORTFOLIO_CONTEXT.md` prior to generating or modifying any UI components, page structures, or styling logic.
+
+## Design System & Aesthetic Rules (Updated)
+- **Subtle Ambient Space Theme**: (CRITICAL MODIFICATION)
+  - The default base background is no longer a solid color.
+  - Implement a very sparse, non-distracting, randomized field of small 'stars' (particles) rendered via `tsparticles-slim`.
+  - Introduce a subtle, deep ambient background gradient shifting very slowly between deep navy (`#0A0E17`) and muted cosmic purple (`#120A1C`). The overall impression must remain monolithic, dark, and professional, not playful.
+- **Structural 2px Borders**: Use prominent, visible structural borders (`border-2 border-neutral-800`) across all cards and section containers. These must remain sharp against the starry background.
+- **Dynamic Accent Theming**:
+  - Do NOT hardcode hover border colors per project card.
+  - Bind CSS custom properties (`--accent-color`, `--glow-color`) based on runtime data in `projects.json`.
+  - On hover, card borders must dynamically transition to the active project's accent color.
+  - The hover glow shadow (`shadow-[var(--glow-color)]`) must be optimized to look sharp and luminous *over* the subtle starry background.
+- **Interactive States**: Ensure all clickable or hoverable elements include subtle lift animations (`hover:-translate-y-1`) and smooth transitions (`transition-all duration-300`).
+
+## Component Architecture Standards
+Keep components modular, single-responsibility, and easy to maintain:
+- `components/StarryBackground.jsx` -> (NEW) Client component that initializes and renders the optimized `tsparticles-slim` configuration.
+- `app/layout.js` -> Integrate `StarryBackground` component behind the main content tree.
+- `components/Hero.jsx` -> Integrated personal introduction, academic credentials badge, and CTA action toolbar.
+- `components/ProjectCard.jsx` -> Direct-impact architectural case study card implementing the 3-column Purpose & Impact breakdown (Problem, Solution, Impact) and bottom tech pill matrix.
+- `components/ProjectGrid.jsx` -> Unfiltered multi-card showcase with hover state management.
+- `components/ExperienceMatrix.jsx` -> Compact 2-column Bento-style layout for BNCC instructing, Samsung Innovation Campus, and ElevAIte achievements.
+- `data/projects.json` -> Source-of-truth runtime data feed for project titles, metrics, themes, and links.
+
+## Coding Best Practices
+- Add `'use client'` at the top of components handling active hover states, dynamic CSS variable updates, interactivity, or background particle rendering.
+- Ensure all external links include `target="_blank" rel="noopener noreferrer"`.
