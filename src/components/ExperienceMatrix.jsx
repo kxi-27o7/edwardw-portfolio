@@ -32,7 +32,7 @@ export default function ExperienceMatrix() {
           Milestones & Experience
         </p>
         <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-white sm:text-4xl">
-          Impact-oriented experience matrix
+          Personal & Professional Growth
         </h2>
       </div>
 
