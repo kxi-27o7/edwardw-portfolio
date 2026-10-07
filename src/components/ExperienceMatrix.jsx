@@ -26,7 +26,7 @@ const experiences = [
 
 export default function ExperienceMatrix() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+    <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
       <div className="mb-8">
         <p className="text-xs font-medium uppercase tracking-[0.32em] text-slate-400">
           Milestones & Experience
