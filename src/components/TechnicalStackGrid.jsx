@@ -3,11 +3,21 @@
 const stackGroups = [
   {
     title: 'Languages',
-    items: ['C/C++', 'Python', 'SQL', 'JavaScript', 'HTML/CSS'],
+    items: ['C/C++', 'Python', 'SQL', 'JavaScript'],
   },
   {
     title: 'Frameworks & Libraries',
-    items: ['PyTorch', 'Scikit-Learn', 'OpenCV', 'Flask', 'FastAPI', 'React', 'Tailwind CSS'],
+    items: [
+      'HTML',
+      'CSS',
+      'PyTorch',
+      'Scikit-Learn',
+      'OpenCV',
+      'Flask',
+      'FastAPI',
+      'React',
+      'Tailwind CSS',
+    ],
   },
   {
     title: 'Tools & Infra',
@@ -17,7 +27,10 @@ const stackGroups = [
 
 export default function TechnicalStackGrid() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+    <section
+      id="technical-stack"
+      className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8"
+    >
       <div className="mb-8">
         <p className="text-xs font-medium uppercase tracking-[0.32em] text-slate-400">
           Technical Stack
