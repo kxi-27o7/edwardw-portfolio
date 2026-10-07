@@ -17,7 +17,7 @@
       "impact": "Delivered a robust backend API with relational PostgreSQL schemas, achieving low-latency query execution and containerized delivery on Render."
     },
     "links": {
-      "github": "https://github.com/kxi-27o7",
+      "github": "https://github.com/kxi-27o7/collabra",
       "demo": "https://github.com/kxi-27o7"
     }
   },
@@ -39,8 +39,8 @@
       "impact": "Processed and prepared over 1.67M dataset rows, achieving ~97.3% fraud recall on test set evaluations while establishing a sub-second model deployment workflow on Vercel."
     },
     "links": {
-      "github": "https://github.com/kxi-27o7",
-      "demo": "https://github.com/kxi-27o7"
+      "github": "https://github.com/kxi-27o7/bankguard",
+      "demo": "https://bankguard-tawny.vercel.app/"
     }
   },
   {
@@ -61,7 +61,7 @@
       "impact": "Successfully engineered dataset preprocessing and multi-class evaluation routines, validating model performance using Mean Absolute Error (MAE), confusion matrices, and detailed error distribution reviews."
     },
     "links": {
-      "github": "https://github.com/kxi-27o7",
+      "github": "https://github.com/jeremzhg/seeflood",
       "demo": "https://github.com/kxi-27o7"
     }
   }
