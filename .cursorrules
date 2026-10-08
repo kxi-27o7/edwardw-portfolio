@@ -1,33 +1,37 @@
 # Cursor Rules — Edward Wibowo Portfolio (Next.js 14+ / Tailwind CSS)
 
 ## Core Stack & Context Guidelines
-- Tech Stack: Next.js 14+ (App Router), JavaScript/React, Tailwind CSS, Lucide React (icons).
-- Animation Library: Use **[tsparticles-slim]** for background effects (performance optimized).
-- Strict Rule: Always consult `PORTFOLIO_CONTEXT.md` prior to generating or modifying any UI components, page structures, or styling logic.
+- Tech Stack: Next.js 14+ (App Router), JavaScript/React, Tailwind CSS, Lucide React (icons), Framer Motion (animations).
+- Animation & Particle Library: Use **[tsparticles-slim]** for background particle effects (performance optimized) and Framer Motion for entrance/hover interactions.
+- Strict Rule: Always consult `PORTFOLIO_CONTEXT2.md` prior to generating or modifying any UI components, page structures, or styling logic.
 
-## Design System & Aesthetic Rules (Updated)
-- **Subtle Ambient Space Theme**: (CRITICAL MODIFICATION)
-  - The default base background is no longer a solid color.
-  - Implement a very sparse, non-distracting, randomized field of small 'stars' (particles) rendered via `tsparticles-slim`.
-  - Introduce a subtle, deep ambient background gradient shifting very slowly between deep navy (`#0A0E17`) and muted cosmic purple (`#120A1C`). The overall impression must remain monolithic, dark, and professional, not playful.
-- **Structural 2px Borders**: Use prominent, visible structural borders (`border-2 border-neutral-800`) across all cards and section containers. These must remain sharp against the starry background.
+## Design System & Aesthetic Rules
+- **Subtle Ambient Space Theme**:
+  - Sparse, non-distracting field of small 'stars' (particles) rendered via `tsparticles-slim`.
+  - Deep ambient background gradient shifting between deep void (`#05070C`) and muted cosmic purple (`#120A1C`). Must remain monolithic, dark, and executive-ready.
+- **Glassmorphic & Structural Framing**:
+  - Structural 1.5px glassmorphic borders (`border border-white/10` or `border-neutral-800`) across cards and floating elements.
+  - Monospaced labels for technical status indicators (e.g., `SYS.LOC // JAKARTA, ID` | `STATUS // ONLINE`).
+- **Hero-Only Warp-Jump Load Animation**:
+  - Custom horizontal gradient lines (`from-transparent via-indigo-500 to-transparent`) in the Hero section only.
+  - Animates laterally on initial page load (0.6s–0.8s `ease-out`) as an entry effect. All standard section dividers remain clean, static 1px borders (`border-white/10`).
 - **Dynamic Accent Theming**:
-  - Do NOT hardcode hover border colors per project card.
   - Bind CSS custom properties (`--accent-color`, `--glow-color`) based on runtime data in `projects.json`.
-  - On hover, card borders must dynamically transition to the active project's accent color.
-  - The hover glow shadow (`shadow-[var(--glow-color)]`) must be optimized to look sharp and luminous *over* the subtle starry background.
-- **Interactive States**: Ensure all clickable or hoverable elements include subtle lift animations (`hover:-translate-y-1`) and smooth transitions (`transition-all duration-300`).
+  - On hover, card borders dynamically transition to the active project's accent color with a soft ambient shadow (`shadow-[var(--glow-color)]`).
+- **Interactive States**:
+  - All clickable or hoverable elements include subtle lift animations (`hover:-translate-y-1`) and smooth transitions (`transition-all duration-300`).
 
 ## Component Architecture Standards
 Keep components modular, single-responsibility, and easy to maintain:
-- `components/StarryBackground.jsx` -> (NEW) Client component that initializes and renders the optimized `tsparticles-slim` configuration.
-- `app/layout.js` -> Integrate `StarryBackground` component behind the main content tree.
-- `components/Hero.jsx` -> Integrated personal introduction, academic credentials badge, and CTA action toolbar.
-- `components/ProjectCard.jsx` -> Direct-impact architectural case study card implementing the 3-column Purpose & Impact breakdown (Problem, Solution, Impact) and bottom tech pill matrix.
-- `components/ProjectGrid.jsx` -> Unfiltered multi-card showcase with hover state management.
-- `components/ExperienceMatrix.jsx` -> Compact 2-column Bento-style layout for BNCC instructing, Samsung Innovation Campus, and ElevAIte achievements.
+- `components/StarryBackground.jsx` -> Client component that initializes and renders the optimized `tsparticles-slim` background.
+- `components/SiteNavigation.jsx` -> Fixed floating glass pill navbar (`top-6 left-1/2 -translate-x-1/2`) with quick-scroll anchors and resume CTA.
+- `components/Hero.jsx` -> Hero section featuring academic badge, syntax-highlighted JSON identity block, headline hook, profile headshot glow ring, primary action buttons, and the one-time warp-jump load animation.
+- `components/ProjectCard.jsx` -> Case study card implementing the 3-column Purpose & Impact breakdown (Challenge, Approach, Impact) and bottom tech pill matrix.
+- `components/ProjectGrid.jsx` -> Direct-impact case study showcase with hover state management.
+- `components/ExperienceMatrix.jsx` -> Asymmetric Bento-style layout (BNCC C Praetorian feature card + Samsung Innovation Campus and ElevAIte Hackathon cards).
 - `data/projects.json` -> Source-of-truth runtime data feed for project titles, metrics, themes, and links.
+- `app/layout.js` -> Main layout structure integrating `StarryBackground` and `SiteNavigation`.
 
 ## Coding Best Practices
-- Add `'use client'` at the top of components handling active hover states, dynamic CSS variable updates, interactivity, or background particle rendering.
+- Add `'use client'` at the top of components handling active hover states, dynamic CSS variable updates, interactivity, Framer Motion animations, or background particle rendering.
 - Ensure all external links include `target="_blank" rel="noopener noreferrer"`.
