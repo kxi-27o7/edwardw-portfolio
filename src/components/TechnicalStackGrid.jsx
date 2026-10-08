@@ -32,8 +32,8 @@ export default function TechnicalStackGrid() {
       className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8"
     >
       <div className="mb-8">
-        <p className="text-xs font-medium uppercase tracking-[0.32em] text-slate-400">
-          Technical Stack
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.24em] text-indigo-300">
+          {'Technical Stack'}
         </p>
         <h2 className="mt-3 text-3xl font-black tracking-tighter text-white sm:text-4xl">
           Tools I build with
@@ -44,7 +44,7 @@ export default function TechnicalStackGrid() {
         {stackGroups.map((group) => (
           <div
             key={group.title}
-            className="rounded-2xl border-2 border-neutral-800 bg-slate-950/70 p-5 shadow-[0_0_20px_rgba(15,23,42,0.55)]"
+            className="rounded-2xl border-[1.5px] border-white/10 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)]"
           >
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-300">
               {group.title}
@@ -53,7 +53,7 @@ export default function TechnicalStackGrid() {
               {group.items.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-neutral-700 bg-slate-900/80 px-2.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-slate-100"
+                  className="rounded-full border border-white/10 bg-slate-900/80 px-2.5 py-1.5 font-mono text-[10px] font-medium text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/40 hover:text-white"
                 >
                   {item}
                 </span>
