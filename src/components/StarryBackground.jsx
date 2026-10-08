@@ -10,7 +10,7 @@ const particleOptions = {
   fpsLimit: 30,
   particles: {
     number: {
-      value: 90,
+      value: 55,
       density: { enable: true, area: 1200 },
     },
     color: { value: ['#E2E8F0', '#C4B5FD', '#BAE6FD'] },
