@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import StarryBackground from '@/components/StarryBackground';
+import SiteNavigation from '@/components/SiteNavigation';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,8 +23,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="relative min-h-screen overflow-x-hidden bg-[#0A0E17] text-white antialiased">
+      <body className="relative min-h-screen overflow-x-hidden bg-[#05070C] text-white antialiased">
         <StarryBackground />
+        <SiteNavigation />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
