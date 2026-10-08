@@ -1,8 +1,8 @@
 'use client';
 
 const breakdownLabels = {
-  challenge: 'Problem',
-  approach: 'Solution',
+  problem: 'Problem',
+  solution: 'Solution',
   impact: 'Impact',
 };
 export default function ProjectCard({ project }) {
