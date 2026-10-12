@@ -39,9 +39,9 @@ export default function Hero() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-4 pb-10 pt-28 sm:px-6 sm:pb-14 sm:pt-32 lg:px-8"
     >
 
-      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
+      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10">
         <div className="min-w-0">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-indigo-300">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-indigo-300 lg:whitespace-nowrap lg:text-[10px] lg:tracking-[0.12em]">
             BINUS UNIVERSITY <span className="text-indigo-300">•</span> GPA 3.97 / 4.00  
             <span className="text-indigo-300">•</span> Computer Science Undergraduate
           </p>
@@ -55,7 +55,7 @@ export default function Hero() {
             Software Engineer &amp; Machine Learning Developer
           </p>
 
-          <div className="mt-7 max-w-2xl overflow-hidden rounded-2xl border-[1.5px] border-white/10 bg-[#080B12]/85 shadow-[0_0_35px_rgba(99,102,241,0.10)] backdrop-blur-sm">
+          <div className="mt-7 max-w-2xl overflow-hidden rounded-2xl border-[1.5px] border-white/20 bg-[#080B12]/85 shadow-[0_0_35px_rgba(99,102,241,0.10)] backdrop-blur-sm sm:max-w-xl">
             <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-rose-400/80" />
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-amber-300/80" />
@@ -105,7 +105,7 @@ export default function Hero() {
                   'inline-flex items-center gap-2 rounded-xl border-[1.5px] px-3.5 py-2.5 text-xs font-semibold transition-all duration-300 hover:-translate-y-1 sm:text-sm',
                   download
                     ? 'border-transparent bg-white text-slate-950 shadow-[0_0_30px_rgba(255,255,255,0.18)] hover:bg-slate-200'
-                    : 'border-white/10 bg-white/[0.04] text-slate-100 hover:border-indigo-300/60 hover:bg-indigo-400/10 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.18)]',
+                    : 'border-white/20 bg-white/[0.04] text-slate-100 hover:border-indigo-300/60 hover:bg-indigo-400/10 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.18)]',
                 ].join(' ')}
               >
                 <Icon aria-hidden="true" size={15} />
@@ -116,10 +116,19 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[17rem]">
+        <div className="relative mx-auto w-full max-w-[12.5rem] sm:max-w-[14rem] lg:flex lg:flex-col lg:self-stretch lg:items-center lg:justify-center lg:justify-self-end lg:-translate-x-16">
+          <Image
+            src="/thinking-line-art.png"
+            alt=""
+            aria-hidden="true"
+            width={400}
+            height={690}
+            loading="eager"
+            className="pointer-events-none absolute -right-24 -bottom-5 z-0 h-auto w-[11.5rem] opacity-40 sm:-top-12 sm:w-[12.5rem] lg:-right-44 lg:top-auto lg:-bottom-12 lg:w-[22rem] lg:max-w-none lg:-translate-x-8"
+          />
           <div
             aria-label={portraitFailed ? 'Profile portrait unavailable' : 'Profile portrait'}
-            className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border-[1.5px] border-indigo-300/40 bg-gradient-to-b from-indigo-400/20 via-slate-900/80 to-sky-400/10 text-indigo-100 shadow-[0_0_45px_rgba(99,102,241,0.18)]"
+            className="relative z-10 aspect-[4/5] w-full translate-y-3 -translate-x-20 overflow-hidden rounded-[2rem] border-[1.5px] border-indigo-300/40 bg-gradient-to-b from-indigo-400/20 via-slate-900/80 to-sky-400/10 text-indigo-100 shadow-[0_0_45px_rgba(99,102,241,0.18)] sm:translate-y-5"
           >
             {!portraitFailed && (
               <Image
@@ -127,7 +136,7 @@ export default function Hero() {
                 alt="Edward Wibowo"
                 fill
                 priority
-                sizes="(min-width: 1024px) 272px, (min-width: 640px) 272px, 70vw"
+                sizes="(min-width: 1024px) 224px, (min-width: 640px) 224px, 200px"
                 className={`object-cover transition-opacity duration-300 ${hasPortrait ? 'opacity-100' : 'opacity-0'}`}
                 onLoad={() => setHasPortrait(true)}
                 onError={() => setPortraitFailed(true)}
@@ -135,7 +144,7 @@ export default function Hero() {
             )}
             {!hasPortrait && (
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-5xl text-indigo-100/70">EW</span>
+                <span className="text-5xl text-indigo-100/70">E.W.</span>
                 <span className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-300">
                   {portraitFailed ? 'Portrait unavailable' : 'Loading portrait'}
                 </span>
