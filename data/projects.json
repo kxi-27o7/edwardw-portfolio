@@ -1,27 +1,5 @@
 [
   {
-    "title": "Collabra",
-    "role": "Backend Developer",
-    "period": "2026",
-    "category": "Backend & Full Stack",
-    "tech": ["FastAPI", "SQLModel", "PostgreSQL", "JavaScript", "Docker", "Render"],
-    "theme": {
-      "primary": "#6366F1",
-      "accent": "#818CF8",
-      "glow": "rgba(99, 102, 241, 0.15)"
-    },
-    "summary": "Full-stack project collaboration app with role-based authorization, real-time status tracking, and containerized API deployment.",
-    "purpose": {
-      "problem": "Software teams need real-time task tracking without complex setup or loose permission management across project members.",
-      "solution": "Built a modular REST API using FastAPI and SQLModel with custom middleware for role-based authorization (owner/member levels) and Dockerized deployment.",
-      "impact": "Delivered a robust backend API with relational PostgreSQL schemas, achieving low-latency query execution and containerized delivery on Render."
-    },
-    "links": {
-      "github": "https://github.com/kxi-27o7/collabra",
-      "demo": "https://github.com/kxi-27o7"
-    }
-  },
-  {
     "title": "BankGuard",
     "role": "Machine Learning Engineer",
     "period": "2026",
@@ -62,6 +40,59 @@
     },
     "links": {
       "github": "https://github.com/jeremzhg/seeflood",
+      "demo": "https://github.com/kxi-27o7"
+    }
+  },
+  {
+    "title": "Fake News Detection Using NLP",
+    "role": "NLP & Machine Learning Developer",
+    "period": "2026",
+    "category": "Machine Learning & NLP",
+    "tech": [
+      "Python",
+      "Jupyter Notebook",
+      "pandas",
+      "NLTK",
+      "scikit-learn",
+      "PyTorch",
+      "Hugging Face Transformers",
+      "Flask"
+    ],
+    "theme": {
+      "primary": "#475569",
+      "accent": "#38BDF8",
+      "glow": "rgba(56, 189, 248, 0.15)"
+    },
+    "summary": "Developed a fake-news classification workflow comparing traditional machine-learning, BiLSTM, and DistilBERT models, and integrated DistilBERT preprocessing into the Flask prediction API.",
+    "purpose": {
+      "problem": "Readers need a reliable way to verify article credibility, while model architectures require consistent data preprocessing and comparative evaluation.",
+      "solution": "Created data pipelines and training notebooks for Naive Bayes, linear SVM, BiLSTM, and DistilBERT models, packing reusable feature transformers directly into a Flask inference endpoint.",
+      "impact": "Delivered an active Flask prediction service returning real-time fake/real classifications with confidence scores, backed by rigorous notebook evaluation metrics."
+    },
+    "links": {
+      "github": "https://github.com/raditputra1203/fake-news-detection-nlp",
+      "demo": "https://github.com/kxi-27o7"
+    }
+  },
+  {
+    "title": "Collabra",
+    "role": "Backend Developer",
+    "period": "2026",
+    "category": "Backend & Full Stack",
+    "tech": ["FastAPI", "SQLModel", "PostgreSQL", "JavaScript", "Docker", "ngrok"],
+    "theme": {
+      "primary": "#6366F1",
+      "accent": "#818CF8",
+      "glow": "rgba(99, 102, 241, 0.15)"
+    },
+    "summary": "Full-stack project collaboration app with role-based authorization, real-time status tracking, and containerized local environment exposed via secure HTTP tunneling.",
+    "purpose": {
+      "problem": "Software teams need real-time task tracking without complex setup or loose permission management across project members.",
+      "solution": "Built a modular REST API using FastAPI and SQLModel with custom middleware for role-based authorization (owner/member levels), containerized with Docker, and integrated with secure tunneling for cross-network live testing and invites.",
+      "impact": "Engineered a multi-device local environment with relational PostgreSQL schemas, enabling real-time project invitation flows and multi-user synchronization during live testing."
+    },
+    "links": {
+      "github": "https://github.com/kxi-27o7/collabra",
       "demo": "https://github.com/kxi-27o7"
     }
   }
