@@ -50,7 +50,7 @@ export default function ExperienceMatrix() {
         {experiences.map((experience, index) => (
           <article
             key={experience.title}
-            className={`group relative min-h-56 overflow-hidden rounded-2xl border-[1.5px] border-white/10 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:shadow-[0_0_30px_var(--glow-color)] sm:p-6 ${
+            className={`group relative min-h-56 overflow-hidden rounded-2xl border-[1.5px] border-white/20 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:shadow-[0_0_30px_var(--glow-color)] sm:p-6 ${
               index === 0 ? 'md:row-span-2 md:min-h-0' : ''
             }`}
             style={{
@@ -63,7 +63,7 @@ export default function ExperienceMatrix() {
             />
             <div className="relative flex h-full flex-col">
               <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-                <span className="rounded-full border border-white/10 bg-slate-900/80 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-200">
+                <span className="rounded-full border border-white/20 bg-slate-900/80 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-200">
                   {experience.period}
                 </span>
                 {index === 0 && (

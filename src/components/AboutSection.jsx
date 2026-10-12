@@ -39,7 +39,7 @@ export default function AboutSection() {
           {focusAreas.map((area) => (
             <article
               key={area.label}
-              className="rounded-2xl border-[1.5px] border-white/10 bg-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/35 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)]"
+              className="rounded-2xl border-[1.5px] border-white/20 bg-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/35 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)]"
             >
               <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-indigo-200">
                 {area.label}

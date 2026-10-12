@@ -13,11 +13,11 @@ export default function ProjectCard({ project }) {
 
   return (
     <article
-      className="group relative overflow-hidden rounded-2xl border-[1.5px] border-white/10 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:shadow-[0_0_35px_var(--glow-color)] sm:p-6"
+      className="group relative overflow-hidden rounded-2xl border-[1.5px] border-white/20 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:shadow-[0_0_35px_var(--glow-color)] sm:p-6"
       style={themeStyle}
     >
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-200">
+        <span className="inline-flex rounded-full border border-white/20 bg-white/[0.04] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-200">
           {project.category}
         </span>
 
@@ -27,7 +27,7 @@ export default function ProjectCard({ project }) {
               href={project.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:text-white hover:shadow-[0_0_16px_var(--glow-color)]"
+              className="rounded-lg border border-white/20 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:text-white hover:shadow-[0_0_16px_var(--glow-color)]"
             >
               GitHub
             </a>
@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
               href={project.links.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:text-white hover:shadow-[0_0_16px_var(--glow-color)]"
+              className="rounded-lg border border-white/20 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:text-white hover:shadow-[0_0_16px_var(--glow-color)]"
             >
               Demo
             </a>
@@ -58,7 +58,7 @@ export default function ProjectCard({ project }) {
         {Object.entries(project.purpose).map(([key, value]) => (
           <div
             key={key}
-            className="rounded-xl border border-white/10 bg-white/[0.025] p-4"
+            className="rounded-xl border border-white/20 bg-white/[0.025] p-4"
           >
             <div className="mb-2 flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300">
               {breakdownLabels[key] || key}
@@ -72,7 +72,7 @@ export default function ProjectCard({ project }) {
         {project.tech.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-white/10 bg-white/[0.035] px-2.5 py-1.5 font-mono text-[10px] font-medium text-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:text-white hover:shadow-[0_0_14px_var(--glow-color)]"
+            className="rounded-full border border-white/20 bg-white/[0.035] px-2.5 py-1.5 font-mono text-[10px] font-medium text-slate-200 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:text-white hover:shadow-[0_0_14px_var(--glow-color)]"
           >
             {item}
           </span>

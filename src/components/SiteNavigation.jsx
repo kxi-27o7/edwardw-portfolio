@@ -48,7 +48,7 @@ export default function SiteNavigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/50 hover:text-white hover:shadow-[0_0_14px_rgba(99,102,241,0.2)]"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/50 hover:text-white hover:shadow-[0_0_14px_rgba(99,102,241,0.2)]"
               >
                 <Icon aria-hidden="true" size={14} />
               </a>

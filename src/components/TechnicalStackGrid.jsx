@@ -44,7 +44,7 @@ export default function TechnicalStackGrid() {
         {stackGroups.map((group) => (
           <div
             key={group.title}
-            className="rounded-2xl border-[1.5px] border-white/10 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)]"
+            className="rounded-2xl border-[1.5px] border-white/20 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/30 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)]"
           >
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-slate-300">
               {group.title}
@@ -53,7 +53,7 @@ export default function TechnicalStackGrid() {
               {group.items.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-slate-900/80 px-2.5 py-1.5 font-mono text-[10px] font-medium text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/40 hover:text-white"
+                  className="rounded-full border border-white/20 bg-slate-900/80 px-2.5 py-1.5 font-mono text-[10px] font-medium text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/40 hover:text-white"
                 >
                   {item}
                 </span>
