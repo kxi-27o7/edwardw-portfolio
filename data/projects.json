@@ -17,8 +17,7 @@
       "impact": "Processed and prepared over 1.67M dataset rows, achieving ~97.3% fraud recall on test set evaluations while establishing a sub-second model deployment workflow on Vercel."
     },
     "links": {
-      "github": "https://github.com/kxi-27o7/bankguard",
-      "demo": "https://bankguard-tawny.vercel.app/"
+      "github": "https://github.com/kxi-27o7/bankguard"
     }
   },
   {
@@ -39,8 +38,7 @@
       "impact": "Successfully engineered dataset preprocessing and multi-class evaluation routines, validating model performance using Mean Absolute Error (MAE), confusion matrices, and detailed error distribution reviews."
     },
     "links": {
-      "github": "https://github.com/jeremzhg/seeflood",
-      "demo": "https://github.com/kxi-27o7"
+      "github": "https://github.com/jeremzhg/seeflood"
     }
   },
   {
@@ -70,8 +68,7 @@
       "impact": "Delivered an active Flask prediction service returning real-time fake/real classifications with confidence scores, backed by rigorous notebook evaluation metrics."
     },
     "links": {
-      "github": "https://github.com/raditputra1203/fake-news-detection-nlp",
-      "demo": "https://github.com/kxi-27o7"
+      "github": "https://github.com/raditputra1203/fake-news-detection-nlp"
     }
   },
   {
@@ -92,8 +89,7 @@
       "impact": "Engineered a multi-device local environment with relational PostgreSQL schemas, enabling real-time project invitation flows and multi-user synchronization during live testing."
     },
     "links": {
-      "github": "https://github.com/kxi-27o7/collabra",
-      "demo": "https://github.com/kxi-27o7"
+      "github": "https://github.com/kxi-27o7/collabra"
     }
   }
 ]
