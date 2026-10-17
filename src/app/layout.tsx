@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="relative min-h-screen overflow-x-hidden bg-[#05070C] text-white antialiased">
+      <body className="relative min-h-screen overflow-x-hidden antialiased">
         <StarryBackground />
         <SiteNavigation />
         <div className="relative z-10">{children}</div>
