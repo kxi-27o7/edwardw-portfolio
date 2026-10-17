@@ -13,7 +13,7 @@ const particleOptions = {
       value: 55,
       density: { enable: true, area: 1200 },
     },
-    color: { value: ['#E2E8F0', '#C4B5FD', '#BAE6FD'] },
+    color: { value: ['#E2E8F0', '#93C5FD', '#BAE6FD'] },
     opacity: { value: { min: 0.2, max: 0.65 }, animation: { enable: true, speed: 0.35, minimumValue: 0.15 } },
     size: { value: { min: 1, max: 2.5 } },
     move: {

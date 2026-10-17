@@ -41,26 +41,26 @@ export default function Hero() {
 
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10">
         <div className="min-w-0">
-          <p className="mb-4 font-mono text-xs uppercase tracking-[0.24em] text-indigo-300 lg:whitespace-nowrap lg:text-[10px] lg:tracking-[0.12em]">
-            BINUS UNIVERSITY <span className="text-indigo-300">•</span> GPA 3.97 / 4.00  
-            <span className="text-indigo-300">•</span> Computer Science Undergraduate
+          <p className="theme-accent mb-4 font-mono text-xs uppercase tracking-[0.24em] lg:whitespace-nowrap lg:text-[10px] lg:tracking-[0.12em]">
+            BINUS UNIVERSITY <span>•</span> GPA 3.97 / 4.00
+            <span>•</span> Computer Science Undergraduate
           </p>
-          <h1 className="text-4xl font-black leading-[0.98] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="theme-text-primary text-4xl font-black leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
             Edward Wibowo
           </h1>
-          <p className="mt-5 max-w-3xl text-lg font-semibold leading-snug tracking-[-0.03em] text-slate-200 sm:text-2xl">
+          <p className="theme-text-secondary mt-5 max-w-3xl text-lg font-semibold leading-snug tracking-[-0.03em] sm:text-2xl">
             Building intelligent systems for real-world impact.
           </p>
-          <p className="mt-2 text-sm font-medium text-indigo-300 sm:text-lg">
+          <p className="theme-accent mt-2 text-sm font-medium sm:text-lg">
             Software Engineer &amp; Machine Learning Developer
           </p>
 
-          <div className="mt-7 max-w-2xl overflow-hidden rounded-2xl border-[1.5px] border-white/20 bg-[#080B12]/85 shadow-[0_0_35px_rgba(99,102,241,0.10)] backdrop-blur-sm sm:max-w-xl">
-            <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+          <div className="theme-surface-raised theme-border mt-7 max-w-2xl overflow-hidden rounded-2xl border-[1.5px] shadow-[0_0_35px_rgba(37,99,235,0.10)] backdrop-blur-sm sm:max-w-xl">
+            <div className="theme-border flex items-center gap-2 border-b px-4 py-3">
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-rose-400/80" />
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-amber-300/80" />
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-300/80" />
-              <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
+              <span className="theme-muted ml-2 font-mono text-[10px] uppercase tracking-[0.2em]">
                 identity.json
               </span>
             </div>
@@ -69,26 +69,26 @@ export default function Hero() {
               className="overflow-x-auto px-4 py-4 font-mono text-xs leading-6 sm:px-6 sm:text-sm"
             >
               <code>
-                <span className="text-slate-500">{'{'}</span>
+                <span className="theme-muted">{'{'}</span>
                 {'\n  '}
-                <span className="text-sky-300">&quot;developer&quot;</span>
-                <span className="text-slate-400">: </span>
-                <span className="text-emerald-300">&quot;Edward Wibowo&quot;</span>
-                <span className="text-slate-400">,</span>
+                <span className="theme-code-key">&quot;developer&quot;</span>
+                <span className="theme-code-punctuation">: </span>
+                <span className="theme-code-value">&quot;Edward Wibowo&quot;</span>
+                <span className="theme-code-punctuation">,</span>
                 {'\n  '}
-                <span className="text-sky-300">&quot;role&quot;</span>
-                <span className="text-slate-400">: </span>
-                <span className="text-emerald-300">
+                <span className="theme-code-key">&quot;role&quot;</span>
+                <span className="theme-code-punctuation">: </span>
+                <span className="theme-code-value">
                   &quot;Software Engineer &amp; Machine Learning Developer&quot;
                 </span>
-                <span className="text-slate-400">,</span>
+                <span className="theme-code-punctuation">,</span>
                 {'\n  '}
-                <span className="text-sky-300">&quot;location&quot;</span>
-                <span className="text-slate-400">: </span>
-                <span className="text-emerald-300">&quot;Jakarta, ID&quot;</span>
-                <span className="text-slate-400">,</span>
+                <span className="theme-code-key">&quot;location&quot;</span>
+                <span className="theme-code-punctuation">: </span>
+                <span className="theme-code-value">&quot;Jakarta, ID&quot;</span>
+                <span className="theme-code-punctuation">,</span>
                 {'\n'}
-                <span className="text-slate-500">{'}'}</span>
+                <span className="theme-muted">{'}'}</span>
               </code>
             </pre>
           </div>
@@ -104,8 +104,8 @@ export default function Hero() {
                 className={[
                   'inline-flex items-center gap-2 rounded-xl border-[1.5px] px-3.5 py-2.5 text-xs font-semibold transition-all duration-300 hover:-translate-y-1 sm:text-sm',
                   download
-                    ? 'border-transparent bg-white text-slate-950 shadow-[0_0_30px_rgba(255,255,255,0.18)] hover:bg-slate-200'
-                    : 'border-white/20 bg-white/[0.04] text-slate-100 hover:border-indigo-300/60 hover:bg-indigo-400/10 hover:text-white hover:shadow-[0_0_20px_rgba(99,102,241,0.18)]',
+                    ? 'theme-button border-transparent shadow-[0_0_30px_rgba(37,99,235,0.18)] hover:opacity-85'
+                    : 'theme-border theme-surface-chip theme-text-secondary theme-hover-accent border hover:border-sky-400 hover:shadow-[0_0_20px_rgba(37,99,235,0.18)]',
                 ].join(' ')}
               >
                 <Icon aria-hidden="true" size={15} />
@@ -124,11 +124,11 @@ export default function Hero() {
             width={400}
             height={690}
             loading="eager"
-            className="pointer-events-none absolute -right-24 -bottom-5 z-0 h-auto w-[11.5rem] opacity-40 sm:-top-12 sm:w-[12.5rem] lg:-right-44 lg:top-auto lg:-bottom-12 lg:w-[22rem] lg:max-w-none lg:-translate-x-8"
+            className="thinking-line-art pointer-events-none absolute -right-24 -bottom-5 z-0 h-auto w-[11.5rem] opacity-40 sm:-top-12 sm:w-[12.5rem] lg:-right-44 lg:top-auto lg:-bottom-12 lg:w-[22rem] lg:max-w-none lg:-translate-x-8"
           />
           <div
             aria-label={portraitFailed ? 'Profile portrait unavailable' : 'Profile portrait'}
-            className="relative z-10 aspect-[4/5] w-full translate-y-3 -translate-x-20 overflow-hidden rounded-[2rem] border-[1.5px] border-indigo-300/40 bg-gradient-to-b from-indigo-400/20 via-slate-900/80 to-sky-400/10 text-indigo-100 shadow-[0_0_45px_rgba(99,102,241,0.18)] sm:translate-y-5"
+            className="theme-border theme-surface relative z-10 aspect-[4/5] w-full translate-y-3 -translate-x-20 overflow-hidden rounded-[2rem] border-[1.5px] bg-gradient-to-b from-sky-400/20 via-slate-900/10 to-cyan-400/10 text-sky-700 shadow-[0_0_45px_rgba(37,99,235,0.18)] sm:translate-y-5"
           >
             {!portraitFailed && (
               <Image
@@ -144,17 +144,17 @@ export default function Hero() {
             )}
             {!hasPortrait && (
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-5xl text-indigo-100/70">E.W.</span>
-                <span className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-300">
+                <span className="text-5xl text-sky-600/70">E.W.</span>
+                <span className="theme-text-secondary mt-2 font-mono text-[10px] uppercase tracking-[0.2em]">
                   {portraitFailed ? 'Portrait unavailable' : 'Loading portrait'}
                 </span>
               </div>
             )}
-            <div className="pointer-events-none absolute inset-3 rounded-[1.5rem] border border-white/15" />
+            <div className="theme-border pointer-events-none absolute inset-3 rounded-[1.5rem] border" />
           </div>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -inset-3 -z-10 rounded-[2.5rem] border border-indigo-300/15 blur-[1px]"
+            className="pointer-events-none absolute -inset-3 -z-10 rounded-[2.5rem] border border-sky-400/20 blur-[1px]"
           />
         </div>
       </div>

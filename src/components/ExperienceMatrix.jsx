@@ -5,9 +5,9 @@ const experiences = [
     period: 'Sep 2025 – Feb 2026',
     description:
       'Taught a 13-session C programming curriculum, conducted code reviews, and managed KPI benchmarks.',
-    accent: '#6366F1',
-    glow: 'rgba(99, 102, 241, 0.15)',
-    tint: 'from-indigo-500/20 via-indigo-500/5 to-transparent',
+    accent: '#2563EB',
+    glow: 'rgba(37, 99, 235, 0.15)',
+    tint: 'from-blue-500/20 via-blue-500/5 to-transparent',
   },
   {
     title: 'Samsung Innovation Campus -- Team KYGE',
@@ -37,11 +37,11 @@ export default function ExperienceMatrix() {
       id="experience"
       className="mx-auto max-w-6xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
     >
-      <div className="mb-8 border-b border-white/10 pb-5">
-        <p className="font-mono text-xs font-medium uppercase tracking-[0.24em] text-indigo-300">
+      <div className="theme-border mb-8 border-b pb-5">
+        <p className="theme-accent font-mono text-xs font-medium uppercase tracking-[0.24em]">
           {'Milestones & Experience'}
         </p>
-        <h2 className="mt-3 text-3xl font-black tracking-[-0.05em] text-white sm:text-4xl">
+        <h2 className="theme-text-primary mt-3 text-3xl font-black tracking-[-0.05em] sm:text-4xl">
           Personal & Professional Growth
         </h2>
       </div>
@@ -50,7 +50,7 @@ export default function ExperienceMatrix() {
         {experiences.map((experience, index) => (
           <article
             key={experience.title}
-            className={`group relative min-h-56 overflow-hidden rounded-2xl border-[1.5px] border-white/20 bg-slate-950/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:shadow-[0_0_30px_var(--glow-color)] sm:p-6 ${
+            className={`theme-border theme-surface group relative min-h-56 overflow-hidden rounded-2xl border-[1.5px] p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent-color)] hover:shadow-[0_0_30px_var(--glow-color)] sm:p-6 ${
               index === 0 ? 'md:row-span-2 md:min-h-0' : ''
             }`}
             style={{
@@ -63,23 +63,23 @@ export default function ExperienceMatrix() {
             />
             <div className="relative flex h-full flex-col">
               <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-                <span className="rounded-full border border-white/20 bg-slate-900/80 px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-200">
+                <span className="theme-border theme-surface-chip theme-text-secondary rounded-full border px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.16em]">
                   {experience.period}
                 </span>
                 {index === 0 && (
-                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-200">
+                  <span className="theme-accent font-mono text-[10px] uppercase tracking-[0.18em]">
                     Featured
                   </span>
                 )}
               </div>
 
-              <h3 className="text-xl font-bold tracking-[-0.04em] text-white sm:text-2xl">
+              <h3 className="theme-text-primary text-xl font-bold tracking-[-0.04em] sm:text-2xl">
                 {experience.title}
               </h3>
-              <p className="mt-2 font-mono text-xs uppercase tracking-[0.16em] text-indigo-200">
+              <p className="theme-accent mt-2 font-mono text-xs uppercase tracking-[0.16em]">
                 {experience.role}
               </p>
-              <p className="mt-4 text-sm leading-6 text-slate-300">{experience.description}</p>
+              <p className="theme-text-secondary mt-4 text-sm leading-6">{experience.description}</p>
             </div>
           </article>
         ))}

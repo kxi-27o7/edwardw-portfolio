@@ -10,19 +10,19 @@ export default function AboutSection() {
       id="about"
       className="mx-auto max-w-6xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
     >
-      <div className="mb-8 border-b border-white/10 pb-5">
-        <p className="font-mono text-xs font-medium uppercase tracking-[0.24em] text-indigo-300">
+      <div className="theme-border mb-8 border-b pb-5">
+        <p className="theme-accent font-mono text-xs font-medium uppercase tracking-[0.24em]">
           {'About & Core Focus'}
         </p>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:gap-12">
-        <div className="max-w-3xl space-y-4 text-sm leading-7 text-slate-300 sm:text-base">
+        <div className="theme-text-secondary max-w-3xl space-y-4 text-sm leading-7 sm:text-base">
           <p>
-            Hi, I'm Edward Wibowo.
+            Hi, I&apos;m Edward Wibowo.
           </p>
           <p>
-            I'm a Computer Science student at BINUS University focused on building intelligent
+            I&apos;m a Computer Science student at BINUS University focused on building intelligent
             systems to solve real-world problems. I work across both traditional Machine
             Learning and Deep Learning, engineering models that draw insights from complex
             data and solve practical challenges.
@@ -39,12 +39,12 @@ export default function AboutSection() {
           {focusAreas.map((area) => (
             <article
               key={area.label}
-              className="rounded-2xl border-[1.5px] border-white/20 bg-white/[0.035] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-300/35 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)]"
+              className="theme-border theme-surface-chip rounded-2xl border-[1.5px] p-4 transition-all duration-300 hover:-translate-y-1 hover:border-sky-400 hover:shadow-[0_0_24px_rgba(37,99,235,0.1)]"
             >
-              <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-indigo-200">
+              <h3 className="theme-accent font-mono text-[10px] uppercase tracking-[0.2em]">
                 {area.label}
               </h3>
-              <p className="mt-2 text-sm font-semibold leading-6 text-white">{area.value}</p>
+              <p className="theme-text-primary mt-2 text-sm font-semibold leading-6">{area.value}</p>
             </article>
           ))}
         </div>
