@@ -89,6 +89,10 @@ html[data-theme='dark'] body {
   color: var(--text-muted);
 }
 
+.fakeguard-textarea::placeholder {
+  color: var(--text-muted);
+}
+
 .theme-subtle {
   color: var(--text-subtle);
 }
