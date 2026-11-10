@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { ArrowDownToLine, ArrowUpRight, Mail } from 'lucide-react';
+import { MotionConfig, motion } from 'motion/react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 const actionLinks = [
@@ -29,10 +30,41 @@ const actionLinks = [
   },
 ];
 
+const introVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const introItemVariants = {
+  hidden: { opacity: 0, y: 8 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+      ease: [0.23, 1, 0.32, 1],
+    },
+  },
+};
+
+const identityCardVariants = {
+  ...introItemVariants,
+  visible: {
+    ...introItemVariants.visible,
+    transition: {
+      ...introItemVariants.visible.transition,
+      delay: 0.35,
+    },
+  },
+};
+
 export default function Hero() {
   const [hasPortrait, setHasPortrait] = useState(false);
   const [portraitFailed, setPortraitFailed] = useState(false);
-
   return (
     <section
       id="top"
@@ -41,57 +73,84 @@ export default function Hero() {
 
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10">
         <div className="min-w-0">
-          <p className="theme-accent mb-4 font-mono text-xs uppercase tracking-[0.24em] lg:whitespace-nowrap lg:text-[10px] lg:tracking-[0.12em]">
-            BINUS UNIVERSITY <span>•</span> GPA 3.97 / 4.00
-            <span>•</span> Computer Science Undergraduate
-          </p>
-          <h1 className="theme-text-primary text-4xl font-black leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
-            Edward Wibowo
-          </h1>
-          <p className="theme-text-secondary mt-5 max-w-3xl text-lg font-semibold leading-snug tracking-[-0.03em] sm:text-2xl">
-            Building intelligent systems for real-world impact.
-          </p>
-          <p className="theme-accent mt-2 text-sm font-medium sm:text-lg">
-            Software Engineer &amp; Machine Learning Developer
-          </p>
-
-          <div className="theme-surface-raised theme-border mt-7 max-w-2xl overflow-hidden rounded-2xl border-[1.5px] shadow-[0_0_35px_rgba(37,99,235,0.10)] backdrop-blur-sm sm:max-w-xl">
-            <div className="theme-border flex items-center gap-2 border-b px-4 py-3">
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-rose-400/80" />
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-amber-300/80" />
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-300/80" />
-              <span className="theme-muted ml-2 font-mono text-[10px] uppercase tracking-[0.2em]">
-                identity.json
-              </span>
-            </div>
-            <pre
-              aria-label="Developer identity in JSON format"
-              className="overflow-x-auto px-4 py-4 font-mono text-xs leading-6 sm:px-6 sm:text-sm"
+          <MotionConfig reducedMotion="user">
+            <motion.div
+              variants={introVariants}
+              initial="hidden"
+              animate="visible"
             >
-              <code>
-                <span className="theme-muted">{'{'}</span>
-                {'\n  '}
-                <span className="theme-code-key">&quot;developer&quot;</span>
-                <span className="theme-code-punctuation">: </span>
-                <span className="theme-code-value">&quot;Edward Wibowo&quot;</span>
-                <span className="theme-code-punctuation">,</span>
-                {'\n  '}
-                <span className="theme-code-key">&quot;role&quot;</span>
-                <span className="theme-code-punctuation">: </span>
-                <span className="theme-code-value">
-                  &quot;Software Engineer &amp; Machine Learning Developer&quot;
+              <motion.p
+                variants={introItemVariants}
+                className="theme-accent mb-4 font-mono text-xs uppercase tracking-[0.24em] lg:whitespace-nowrap lg:text-[10px] lg:tracking-[0.12em]"
+              >
+                BINUS UNIVERSITY <span>•</span> GPA 3.97 / 4.00
+                <span>•</span> Computer Science Undergraduate
+              </motion.p>
+              <motion.h1
+                variants={introItemVariants}
+                className="theme-text-primary text-4xl font-black leading-[0.98] tracking-[-0.06em] sm:text-6xl lg:text-7xl"
+              >
+                Edward Wibowo
+              </motion.h1>
+              <motion.p
+                variants={introItemVariants}
+                className="theme-text-secondary mt-5 max-w-3xl text-lg font-semibold leading-snug tracking-[-0.03em] sm:text-2xl"
+              >
+                Building intelligent systems for real-world impact.
+              </motion.p>
+              <motion.p
+                variants={introItemVariants}
+                className="theme-accent mt-2 text-sm font-medium sm:text-lg"
+              >
+                Software Engineer &amp; Machine Learning Developer
+              </motion.p>
+            </motion.div>
+          </MotionConfig>
+
+          <MotionConfig reducedMotion="user">
+            <motion.div
+              variants={identityCardVariants}
+              initial="hidden"
+              animate="visible"
+              className="theme-surface-raised theme-border mt-7 max-w-2xl overflow-hidden rounded-2xl border-[1.5px] shadow-[0_0_35px_rgba(37,99,235,0.10)] backdrop-blur-sm sm:max-w-xl"
+            >
+              <div className="theme-border flex items-center gap-2 border-b px-4 py-3">
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-rose-400/80" />
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-amber-300/80" />
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-300/80" />
+                <span className="theme-muted ml-2 font-mono text-[10px] uppercase tracking-[0.2em]">
+                  identity.json
                 </span>
-                <span className="theme-code-punctuation">,</span>
-                {'\n  '}
-                <span className="theme-code-key">&quot;location&quot;</span>
-                <span className="theme-code-punctuation">: </span>
-                <span className="theme-code-value">&quot;Jakarta, ID&quot;</span>
-                <span className="theme-code-punctuation">,</span>
-                {'\n'}
-                <span className="theme-muted">{'}'}</span>
-              </code>
-            </pre>
-          </div>
+              </div>
+              <pre
+                aria-label="Developer identity in JSON format"
+                className="overflow-x-auto px-4 py-4 font-mono text-xs leading-6 sm:px-6 sm:text-sm"
+              >
+                <code>
+                  <span className="theme-muted">{'{'}</span>
+                  {'\n  '}
+                  <span className="theme-code-key">&quot;developer&quot;</span>
+                  <span className="theme-code-punctuation">: </span>
+                  <span className="theme-code-value">&quot;Edward Wibowo&quot;</span>
+                  <span className="theme-code-punctuation">,</span>
+                  {'\n  '}
+                  <span className="theme-code-key">&quot;role&quot;</span>
+                  <span className="theme-code-punctuation">: </span>
+                  <span className="theme-code-value">
+                    &quot;Software Engineer &amp; Machine Learning Developer&quot;
+                  </span>
+                  <span className="theme-code-punctuation">,</span>
+                  {'\n  '}
+                  <span className="theme-code-key">&quot;location&quot;</span>
+                  <span className="theme-code-punctuation">: </span>
+                  <span className="theme-code-value">&quot;Jakarta, ID&quot;</span>
+                  <span className="theme-code-punctuation">,</span>
+                  {'\n'}
+                  <span className="theme-muted">{'}'}</span>
+                </code>
+              </pre>
+            </motion.div>
+          </MotionConfig>
 
           <div className="mt-6 flex flex-wrap items-center gap-2">
             {actionLinks.map(({ label, href, icon: Icon, download }) => (
