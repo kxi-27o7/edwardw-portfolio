@@ -1,6 +1,7 @@
 [
   {
     "title": "BankGuard",
+    "demo": "bankguard",
     "role": "Machine Learning Engineer",
     "period": "2026",
     "category": "Machine Learning & Security",
@@ -22,6 +23,7 @@
   },
   {
     "title": "SeeFlood",
+    "demo": "seeflood",
     "role": "Computer Vision Engineer",
     "period": "2025",
     "category": "Computer Vision & Deep Learning",
@@ -43,6 +45,7 @@
   },
   {
     "title": "Fake News Detection Using NLP",
+    "demo": "fakeguard",
     "role": "NLP & Machine Learning Developer",
     "period": "2026",
     "category": "Machine Learning & NLP",

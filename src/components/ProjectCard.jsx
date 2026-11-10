@@ -1,5 +1,9 @@
 'use client';
 
+import SeeFloodDemo from './SeeFloodDemo';
+import BankGuardDemo from './BankGuardDemo';
+import FakeGuardDemo from './FakeGuardDemo';
+
 const breakdownLabels = {
   problem: 'Problem',
   solution: 'Solution',
@@ -68,6 +72,10 @@ export default function ProjectCard({ project }) {
           </span>
         ))}
       </div>
+
+      {project.demo === 'bankguard' && <BankGuardDemo />}
+      {project.demo === 'seeflood' && <SeeFloodDemo />}
+      {project.demo === 'fakeguard' && <FakeGuardDemo />}
     </article>
   );
 }
