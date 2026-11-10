@@ -28,3 +28,6 @@ The model classifies class 1 as fraud at the configured 70% probability threshol
 The model is a pickle artifact. Use the same scikit-learn version that was used to
 create it if loading emits a version warning or fails; the training environment
 version is not present in the supplied BankGuard files.
+
+For the combined Render deployment of all three model APIs, see
+[the backend deployment guide](../README.md#deploy-all-three-apis-on-render).

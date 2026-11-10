@@ -25,25 +25,16 @@ override the URL. The service defaults to allowing the local portfolio origins;
 set `FAKEGUARD_ALLOWED_ORIGINS` to a comma-separated list of exact origins when
 deploying.
 
-## Prepare for the later Render deployment
+## Render deployment
 
-The model weights are stored with Git LFS. Track the checkpoint and metadata
-before the deployment pass:
+The model weights are stored with Git LFS. The root Render Blueprint deploys this
+API alongside SeeFlood and BankGuard. Follow
+[the backend deployment guide](../README.md#deploy-all-three-apis-on-render) to
+track the model artifacts, create the Blueprint, configure CORS and frontend API
+URLs, and verify all services.
 
-```powershell
-git add .gitattributes .gitignore backend\fakeguard src\components\FakeGuardDemo.jsx
-git add data\projects.json src\components\ProjectCard.jsx
-git add local-assets\models\fakeguard\config.json local-assets\models\fakeguard\tokenizer.json
-git add local-assets\models\fakeguard\tokenizer_config.json local-assets\models\fakeguard\model.safetensors
-git lfs ls-files
-```
-
-Confirm `model.safetensors` appears in `git lfs ls-files`. When the project demos
-are ready, add a `fakeguard-api` service to the existing Render Blueprint using
-`backend/fakeguard/requirements.txt`, this service's `main.py`, and `/health` as
-the health check. Set `FAKEGUARD_ALLOWED_ORIGINS` in Render and
-`NEXT_PUBLIC_FAKEGUARD_API_URL` in the frontend deployment environment. This
-service is prepared for that deployment but is not deployed by this change.
+Render's free service may sleep when idle, so the first prediction after a quiet
+period can take longer.
 
 This is a machine-learning demo, not a fact-checking service. A model prediction
 does not establish whether an article is true; verify claims with reliable sources.

@@ -42,3 +42,16 @@ next-env.d.ts
 
 # skills
 .agents
+
+# Local model weights are not public assets and should not be committed.
+/local-assets/models/*
+!/local-assets/models/*/
+/local-assets/models/*/**
+!/local-assets/models/*/README.md
+!/local-assets/models/*/.gitkeep
+!/local-assets/models/seeflood/seeflood_01.pth
+!/local-assets/models/fakeguard/config.json
+!/local-assets/models/fakeguard/tokenizer.json
+!/local-assets/models/fakeguard/tokenizer_config.json
+!/local-assets/models/fakeguard/model.safetensors
+!/local-assets/models/bankguard/model_maxdepth10.pkl
