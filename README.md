@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Deploying the model API
+
+The Render Blueprint in `render.yaml` deploys the SeeFlood, BankGuard, and FakeGuard APIs as one web service. Their prediction endpoints are `/api/seeflood/predict`, `/api/bankguard/predict`, and `/api/fakeguard/predict`.
+
+Set `ALLOWED_ORIGINS` on the Render service to the deployed portfolio's origin (for example, `https://your-portfolio.example`, without a trailing slash). Set `NEXT_PUBLIC_MODEL_API_URL` in the portfolio's hosting environment to the Render service URL, then rebuild/redeploy the portfolio so the public variable is included in its client bundle.
+
+For local development, run the API from the repository root with `uvicorn backend.app:app --host 0.0.0.0 --port 8000`. Configure `NEXT_PUBLIC_MODEL_API_URL=http://localhost:8000` in the root `.env.local` if needed; the demos default to that URL in development.
+
+This combined service loads all three models at startup. The checkpoints alone total about 275 MiB, before Python, ML libraries, and runtime memory; a Render Free instance may run out of memory. If startup fails or Render restarts the service for memory use, move to a larger instance or host the heavier model separately.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
