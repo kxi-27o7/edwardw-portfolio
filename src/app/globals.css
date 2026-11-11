@@ -253,7 +253,7 @@ html:not([data-theme='dark']) #starry-background canvas {
 
 .shooting-stars__meteor--two {
   top: 24%;
-  left: 43%;
+  left: 46%;
   width: 150px;
   animation-delay: 1.3s;
 }
