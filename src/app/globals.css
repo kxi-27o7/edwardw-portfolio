@@ -24,6 +24,11 @@
   --code-key: #0369a1;
   --code-value: #0f766e;
   --code-punctuation: #52647c;
+  --shooting-star-color: rgba(37, 99, 235, 0.88);
+  --shooting-star-glow: rgba(37, 99, 235, 0.6);
+  --constellation-line: rgba(37, 99, 235, 0.34);
+  --constellation-star: rgba(29, 78, 216, 0.84);
+  --constellation-label: rgba(29, 78, 216, 0.7);
 }
 
 html[data-theme='dark'] {
@@ -48,6 +53,11 @@ html[data-theme='dark'] {
   --code-key: #7dd3fc;
   --code-value: #5eead4;
   --code-punctuation: #94a3b8;
+  --shooting-star-color: rgba(224, 242, 254, 0.95);
+  --shooting-star-glow: rgba(125, 211, 252, 0.65);
+  --constellation-line: rgba(125, 211, 252, 0.3);
+  --constellation-star: rgba(224, 242, 254, 0.9);
+  --constellation-label: rgba(186, 230, 253, 0.72);
 }
 
 html {
@@ -170,17 +180,110 @@ html[data-theme='dark'] .theme-toggle-light-label {
   display: inline;
 }
 
-#starry-background canvas {
-  opacity: 0.7;
-}
-
 .thinking-line-art {
   filter: hue-rotate(-25deg);
 }
 
 html:not([data-theme='dark']) #starry-background canvas {
-  filter: invert(0.55) sepia(0.25) saturate(1.25) hue-rotate(205deg);
-  opacity: 0.45;
+  filter: brightness(0) saturate(100%) invert(31%) sepia(89%) saturate(2609%)
+    hue-rotate(215deg) brightness(96%) contrast(101%);
+  opacity: 0.9;
+}
+
+.constellation-map,
+.shooting-stars {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.constellation-map svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.leo-constellation path {
+  fill: none;
+  stroke: var(--constellation-line);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.leo-constellation .leo-star {
+  fill: var(--constellation-star);
+}
+
+.leo-constellation .leo-star--bright {
+  filter: drop-shadow(0 0 4px var(--shooting-star-glow));
+}
+
+.leo-star-label,
+.leo-constellation-label {
+  fill: var(--constellation-label);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 34px;
+  letter-spacing: 1px;
+}
+
+.leo-constellation-label {
+  fill: #fbbf24;
+  font-size: 42px;
+}
+
+.shooting-stars__meteor {
+  position: absolute;
+  left: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--shooting-star-color));
+  box-shadow: 0 0 9px var(--shooting-star-glow);
+  opacity: 0;
+  transform: rotate(28deg);
+  animation: shooting-star 36s linear infinite;
+}
+
+.shooting-stars__meteor--one {
+  top: 22%;
+  left: 50%;
+  width: 200px;
+}
+
+.shooting-stars__meteor--two {
+  top: 24%;
+  left: 43%;
+  width: 150px;
+  animation-delay: 1.3s;
+}
+
+.shooting-stars__meteor--three {
+  top: 21%;
+  left: 62%;
+  width: 180px;
+  animation-delay: 2.6s;
+}
+
+@keyframes shooting-star {
+  0% {
+    opacity: 0;
+    transform: translate3d(-18px, -18px, 0) rotate(28deg);
+  }
+  0.4% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  4.2% {
+    opacity: 0;
+    transform: translate3d(120px, 36px, 0) rotate(28deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(120px, 36px, 0) rotate(28deg);
+  }
 }
 
 .hero-warp-lines {
@@ -248,6 +351,10 @@ html:not([data-theme='dark']) #starry-background canvas {
     scroll-behavior: auto;
   }
 
+  .shooting-stars__meteor {
+    display: none;
+  }
+
   body {
     animation: none;
   }
@@ -255,6 +362,12 @@ html:not([data-theme='dark']) #starry-background canvas {
   .hero-warp-line {
     transform: scaleX(1);
     animation: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .leo-constellation {
+    display: none;
   }
 }
 

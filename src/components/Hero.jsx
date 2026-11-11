@@ -187,7 +187,7 @@ export default function Hero() {
           />
           <div
             aria-label={portraitFailed ? 'Profile portrait unavailable' : 'Profile portrait'}
-            className="theme-border theme-surface relative z-10 aspect-[4/5] w-full translate-y-3 -translate-x-20 overflow-hidden rounded-[2rem] border-[1.5px] bg-gradient-to-b from-sky-400/20 via-slate-900/10 to-cyan-400/10 text-sky-700 shadow-[0_0_45px_rgba(37,99,235,0.18)] sm:translate-y-5"
+            className="theme-border theme-surface relative z-10 aspect-[4/5] w-full translate-y-5 -translate-x-20 overflow-hidden rounded-[2rem] border-[1.5px] bg-gradient-to-b from-sky-400/20 via-slate-900/10 to-cyan-400/10 text-sky-700 shadow-[0_0_45px_rgba(37,99,235,0.18)] sm:translate-y-5 lg:translate-y-16"
           >
             {!portraitFailed && (
               <Image
