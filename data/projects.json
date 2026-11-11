@@ -1,5 +1,6 @@
 [
   {
+    "slug": "bankguard",
     "title": "BankGuard",
     "demo": "bankguard",
     "role": "Machine Learning Engineer",
@@ -22,6 +23,7 @@
     }
   },
   {
+    "slug": "seeflood",
     "title": "SeeFlood",
     "demo": "seeflood",
     "role": "Computer Vision Engineer",
@@ -44,6 +46,7 @@
     }
   },
   {
+    "slug": "fakeguard",
     "title": "Fake News Detection Using NLP",
     "demo": "fakeguard",
     "role": "NLP & Machine Learning Developer",
@@ -75,6 +78,7 @@
     }
   },
   {
+    "slug": "collabra",
     "title": "Collabra",
     "role": "Backend Developer",
     "period": "2026",
