@@ -7,7 +7,7 @@ import { ArrowUpFromLine, ImagePlus, LoaderCircle, RotateCcw } from 'lucide-reac
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ACCEPTED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
 const API_URL = (
-  process.env.NEXT_PUBLIC_SEEFLOOD_API_URL ||
+  process.env.NEXT_PUBLIC_MODEL_API_URL ||
   (process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '')
 ).replace(/\/+$/, '');
 
@@ -72,7 +72,7 @@ export default function SeeFloodDemo() {
     formData.append('file', selectedFile);
 
     try {
-      const response = await fetch(`${API_URL}/predict`, {
+      const response = await fetch(`${API_URL}/api/seeflood/predict`, {
         method: 'POST',
         body: formData,
       });

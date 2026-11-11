@@ -1,31 +1,11 @@
 services:
   - type: web
-    name: seeflood-api
+    name: portfolio-model-api
     runtime: python
     plan: free
-    buildCommand: git lfs pull --include="local-assets/models/seeflood/**" && pip install -r backend/seeflood/requirements.txt
-    startCommand: uvicorn main:app --app-dir backend/seeflood --host 0.0.0.0 --port $PORT
+    buildCommand: git lfs pull --include="local-assets/models/bankguard/**,local-assets/models/fakeguard/**,local-assets/models/seeflood/**" && pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:
-      - key: SEEFLOOD_ALLOWED_ORIGINS
-        sync: false
-  - type: web
-    name: bankguard-api
-    runtime: python
-    plan: free
-    buildCommand: git lfs pull --include="local-assets/models/bankguard/**" && pip install -r backend/bankguard/requirements.txt
-    startCommand: uvicorn main:app --app-dir backend/bankguard --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health
-    envVars:
-      - key: BANKGUARD_ALLOWED_ORIGINS
-        sync: false
-  - type: web
-    name: fakeguard-api
-    runtime: python
-    plan: free
-    buildCommand: git lfs pull --include="local-assets/models/fakeguard/**" && pip install -r backend/fakeguard/requirements.txt
-    startCommand: uvicorn main:app --app-dir backend/fakeguard --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health
-    envVars:
-      - key: FAKEGUARD_ALLOWED_ORIGINS
+      - key: ALLOWED_ORIGINS
         sync: false

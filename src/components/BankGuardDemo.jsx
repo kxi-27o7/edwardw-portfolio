@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { LoaderCircle, RotateCcw, ShieldAlert, ShieldCheck } from 'lucide-react';
 
 const API_URL = (
-  process.env.NEXT_PUBLIC_BANKGUARD_API_URL ||
-  (process.env.NODE_ENV === 'development' ? 'http://localhost:8001' : '')
+  process.env.NEXT_PUBLIC_MODEL_API_URL ||
+  (process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : '')
 ).replace(/\/+$/, '');
 const SEED_COUNT = 30;
 const INITIAL_BALANCE = 50_000_000;
@@ -124,7 +124,7 @@ export default function BankGuardDemo() {
     setResult(null);
 
     try {
-      const response = await fetch(`${API_URL}/predict`, {
+      const response = await fetch(`${API_URL}/api/bankguard/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ history, transaction }),
