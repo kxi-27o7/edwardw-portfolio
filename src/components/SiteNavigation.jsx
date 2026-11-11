@@ -3,6 +3,7 @@
 import { ArrowUpRight, Moon, Sun } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const sections = [
   { number: '01.', label: 'Projects', href: '#projects' },
@@ -16,6 +17,8 @@ const socialLinks = [
 ];
 
 export default function SiteNavigation() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const savedTheme = window.localStorage.getItem('portfolio-theme');
     document.documentElement.dataset.theme = savedTheme === 'dark' ? 'dark' : 'light';
@@ -35,7 +38,7 @@ export default function SiteNavigation() {
           className="theme-nav theme-border flex items-center justify-between gap-2 rounded-full border px-3 py-2.5 shadow-[0_0_25px_rgba(37,99,235,0.12)] backdrop-blur-md sm:gap-4 sm:px-5"
         >
           <a
-            href="#top"
+            href={pathname === '/' ? '#top' : '/#top'}
             className="theme-text-primary theme-hover-accent shrink-0 font-mono text-sm font-bold tracking-wide transition-all duration-300 hover:-translate-y-1 sm:text-base"
           >
             EdW<span className="theme-accent">.</span>
@@ -45,7 +48,7 @@ export default function SiteNavigation() {
             {sections.map((section) => (
               <a
                 key={section.href}
-                href={section.href}
+                href={pathname === '/' ? section.href : `/${section.href}`}
                 className="theme-text-secondary theme-hover-accent rounded-lg px-1.5 py-2 font-mono text-[9px] font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-white/5 sm:px-2.5 sm:text-xs"
               >
                 <span className="theme-accent">{section.number}</span>{' '}
