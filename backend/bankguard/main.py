@@ -1,6 +1,5 @@
 import logging
 import os
-import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Literal
@@ -24,15 +23,17 @@ MODEL_PATH = MODEL_DIR / "model_maxdepth10.pkl"
 ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
-        "BANKGUARD_ALLOWED_ORIGINS",
-        "http://localhost:3000,http://127.0.0.1:3000",
+        "ALLOWED_ORIGINS",
+        os.environ.get(
+            "BANKGUARD_ALLOWED_ORIGINS",
+            "http://localhost:3000,http://127.0.0.1:3000",
+        ),
     ).split(",")
     if origin.strip()
 ]
 
-sys.path.insert(0, str(MODEL_DIR))
-from feature_engineering import make_features
-from model_utils import load_model, predict
+from backend.bankguard.feature_engineering import make_features
+from backend.bankguard.model_utils import load_model, predict
 
 TRANSACTION_TYPES = ("DEPOSIT", "WITHDRAWAL", "TRANSFER", "PAYMENT", "DEBIT")
 MAX_AMOUNT = 50_000_000
