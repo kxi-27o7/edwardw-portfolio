@@ -35,7 +35,7 @@
       "accent": "#38BDF8",
       "glow": "rgba(14, 165, 233, 0.15)"
     },
-    "summary": "Deep learning computer vision pipeline engineered to classify flood image severity into four ordered levels—no flood, light, moderate, and severe—using fine-tuned convolutional architectures.",
+    "summary": "Deep learning computer vision pipeline engineered to classify flood image severity into four levels (no flood, light, moderate, and severe) using fine-tuned convolutional architectures.",
     "purpose": {
       "problem": "Disaster assessment requires rapid, accurate flood severity categorization from visual data, where standard classification ignores the continuous, ordered nature of flood progression.",
       "solution": "Built an end-to-end computer vision workflow in PyTorch, fine-tuning an ImageNet-pretrained EfficientNet-B0 with image augmentation, ordinal regression loss formulation, and structured train/val/test evaluation.",
